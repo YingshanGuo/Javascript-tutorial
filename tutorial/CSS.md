@@ -4,7 +4,7 @@
 <ol>
     <li>CSS常见问题（含LESS语法）
     <ul>
-        <li>span 标签插入图片
+        <li><a href="#1">span 标签插入图片</a>
         <ul>
 	        <li>display: inline-block;</li>
         </ul>
@@ -40,6 +40,7 @@
     </ol>
 
 ## CSS 常见问题（以下内容包含LESS语法）
+<a id="1"></a>
 - span 标签插入图片   background需要加入```display: inline-block; ```
    - 否则图片无法显示出来
    - PS: less语法
