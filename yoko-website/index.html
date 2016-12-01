@@ -3,66 +3,226 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Yoko著作</title>
+    <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./css/base.css">
     <link rel="stylesheet" type="text/css" href="./css/practice.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    <link href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <script type="text/javascript" src="./js/jquery-3.1.1.js"></script>
 </head>
-<style type="text/css">
-    body {
-        background: black;
+<style>
+    .banner-filter {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+    }
+    
+    .banner-background {
+        background-size: cover;
+        background-position: center bottom;
+        position: relative;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        display: table;
+        width: 100%;
+        height: 456px;
+        margin-bottom: 20px;
+        background: url(./images/banner-hongkong.png) 100% 100% no-repeat;
+    }
+    
+    .banner-info {
+        z-index: 2;
+        color: white;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    .circle-medium {
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        border: 1px solid white;
+        margin: 5px;
+        display: table-cell
+    }
+    
+    .banner-title {
+        font-size: 50px;
+        display: block;
+    }
+    
+    .profile-background {
+        background: url(./images/yoko.jpg) no-repeat;
     }
 </style>
 
 <body>
-    <div class="container" style="background:white;height:1000px;border-radius: 10px;">
-        <div style="container" style="background:white;">
-            <div class="content-col-12">
-                <img class="banner-pic" src="./images/banner.png" alt="">
+    <div class="container test-only-border">
+        <!--start nav-->
+        <div class="nav">
+            <div class="nav-left">logo</div>
+            <div class="nav-basic absolute-center">
+                <ul>
+                    <li>
+                        <i class="fa fa-home fa-x text-center" aria-hidden="true"></i>
+                        <span>HOME</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-photo fa-x text-center" aria-hidden="true"></i>
+                        <span>PHOTO</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-plane fa-x text-center" aria-hidden="true"></i>
+                        <span>TRAVEL</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-film fa-x text-center" aria-hidden="true"></i>
+                        <span>FILM</span>
+                    </li>
+                </ul>
             </div>
-            <div class="content-col-12 p-vertical--medium gallery">
-                <span class="content-col-2 m-horizontal--small m-vertical--small gallery-pic gallery-pic-berlin">dsd</span>
-                <span class="content-col-2 m-horizontal--small m-vertical--small gallery-pic gallery-pic-berlin">erw</span>
-                <span class="content-col-2 m-horizontal--small m-vertical--small gallery-pic gallery-pic-berlin">we</span>
-                <span class="content-col-2 m-horizontal--small m-vertical--small gallery-pic gallery-pic-berlin">wer</span>
-
-            </div>
-            <div class="content-col-12">
-                <div class="content-col-6">
-                    <div class="content-col-12">
-                        <span></span>
-                        <span>the Big Apple</span>
-                        <span>New York</span>
-                    </div>
-                    <div class="content-col-12">
-                        <span>pic</span>
-                        <span>profile pic</span>
-                        <span>information</span>
-                    </div>
-                </div>
-                <div class="content-col-6">
-                    <div id="info" class="content-col-8">
-                        <span class="content-col-12">*****</span>
-                        <span id="hide" class="content-col-12">My first day at school My mother accompanied me to school on the first day. Other parents accompanied their children as well. We all waited in front of the school office.
-Soon a teacher came and led us to some classrooms. There we were put into four separate classes. This was when some children began to cry as the parents were not allowed into the classrooms. I did not cry because I had been to kindergarten before. Actually my mother went home soon after for she knew I would be all right.</span>
-                        <div class="content-col-12">
-                            <span class="content-col-6">location</span>
-                            <span class="content-col-3">like</span>
-                            <span class="content-col-3">commit</span>
-                        </div>
-                    </div>
-                    <div class="content-col-4">
-                        dfsdfs
-                    </div>
-                    
-                </div>
+            <div class="nav-right nav-button">
+                <span>Sign In</span>
             </div>
         </div>
-    </div>
+        <!--end nav-->
+        <!--start container-->
+        <div>
+            <div class="banner-basic-setting">
+                <!--start banner-->
+                <div class="banner-background">
+                    <div class="banner-info">
+                        <div class="p-vertical--medium">
+                            <span class="banner-title">Hong Kong</span>
+                            <span class="profile-background">222</span>
+                            <span>by Yoko Kuok·1st,Dec,2016</span>
+                        </div>
+                        <div class="p-vertical--medium">
+                            <span><i class="circle-medium fa fa-heart-o fa-x" aria-hidden="true"></i>like</span>
+                            <span><i class="circle-medium fa fa-commenting-o fa-x" aria-hidden="true"></i>commit</span>
+                        </div>
+                    </div>
+                    <div class="banner-filter"></div>
+                </div>
+                <img src="./images/berlin.png" alt="">
+                <!--end banner-->
+            </div>
+            <div>gallery</div>
+        </div>
+        <!--end container-->
+        <!--toolbar-->
+        <div>
+            <div>
+                info
+                <span>
+                <div class="content-col-12 p-vertical--small p-horizontal--medium">
+                    <input type="checkbox" value="10"/>
+                    <span>A.10</span>
+            </div>
+            <div class="content-col-12 p-vertical--small p-horizontal--medium">
+                <input type="checkbox" value="-10" />
+                <span>B.-10</span>
+            </div>
+            <div class="content-col-12 p-vertical--small p-horizontal--medium">
+                <input type="checkbox" value="0" />
+                <input type="checkbox" value="0" />
+                <input type="checkbox" value="0" />
+                <span>C.0</span>
+            </div>
+            </span>
 
-    <script type="text/javascript">
-        $("#info").click(function() {
-            $("#hide").toggle(5000);
+            <div>
+                <h3>Fruits</h3>
+                <label>
+                <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Kiwi</label>
+                <label>
+                <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Jackfruit</label>
+                <label>
+                <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Mango</label>
+            </div>
+            <div>
+                <h3>Animals</h3>
+                <label>
+                <input type="checkbox" class="radio" value="1" name="fooby[2][]" />Tiger</label>
+                <label>
+                <input type="checkbox" class="radio" value="1" name="fooby[2][]" />Sloth</label>
+                <label>
+                <input type="checkbox" class="radio" value="1" name="fooby[2][]" />Cheetah</label>
+            </div>
+            <div>
+                <label for=""><input type="checkbox" />a</label>
+                <label for=""><input type="checkbox" />b</label>
+                <label for=""><input type="checkbox" />c</label>
+                <input type="checkbox" />d
+                <input type="checkbox" />e
+            </div>
+            <div>
+                <input type="checkbox" />
+                <input type="checkbox" />
+                <input type="checkbox" />
+            </div>
+            <div>
+                <input type="checkbox" name="group1[]" /> <br>
+                <input type="checkbox" name="group1[]" /> <br>
+                <input type="checkbox" name="group1[]" /> <br>
+
+                <input type="checkbox" name="group2[]" /> <br>
+                <input type="checkbox" name="group2[]" /> <br>
+                <input type="checkbox" name="group2[]" /> <br>
+
+                <input type="checkbox" name="group3[]" />
+                <input type="checkbox" name="group3[]" />
+                <input type="checkbox" name="group3[]" />
+            </div>
+        </div>
+        <div>
+            catalog
+        </div>
+    </div>
+    <!--end toolbar-->
+    <!--start footer-->
+    <div class="nav-basic">
+        <ul>
+            <li>
+                <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+            </li>
+            <li>
+                <i class="fa fa-weixin fa-2x" aria-hidden="true"></i>
+            </li>
+            <li>
+                <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+            </li>
+        </ul>
+    </div>
+    <!--end footler-->
+    </div>
+    <script>
+        $("input:checkbox").on('click', function() {
+            // in the handler, 'this' refers to the box clicked on
+            var $box = $(this);
+            if ($box.is(":checked")) {
+                // the name of the box is retrieved using the .attr() method
+                // as it is assumed and expected to be immutable
+                var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                // the checked state of the group/box on the other hand will change
+                // and the current value is retrieved using .prop() method
+                $(group).prop("checked", false);
+                $box.prop("checked", true);
+            } else {
+                $box.prop("checked", false);
+            }
+        });
+        // $("input:checkbox").on('change', function() {
+        //     $(this).siblings("input:checkbox").prop('checked', false);
+        // });
+        $('input[type="checkbox"]').on('change', function() {
+            $('input[name="' + this.name + '"]').not(this).prop('checked', false);
         });
     </script>
 </body>

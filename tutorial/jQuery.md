@@ -1,51 +1,53 @@
 # jQuery
 
 <ol>
-	<li>jQuery基础
+	<li><a href="#jQuery-basic">jQuery基础</a>
 		<ul>
-			<li>效果
+			<li><a href="#jQuery-basic-1">效果</a>
 				<ul>
-					<li>隐藏/显示</li>
-					<li>淡入淡出</li>
-					<li>滑动</li>
-					<li>动画</li>
-					<li>stop()</li>
-					<li>Callback</li>
-					<li>Chaining</li>
+					<li><a href="#jQuery-basic-1.1">隐藏/显示</a></li>
+					<li><a href="#jQuery-basic-1.2">淡入淡出</a></li>
+					<li><a href="#jQuery-basic-1.3">滑动</a></li>
+					<li><a href="#jQuery-basic-1.4">动画</a></li>
+					<li><a href="#jQuery-basic-1.5">stop()</a></li>
+					<li><a href="#jQuery-basic-1.6">Callback</a></li>
+					<li><a href="#jQuery-basic-1.7">Chaining</a></li>
 				</ul>
 			</li>
-			<li>HTML
+			<li><a href="#jQuery-basic-2">HTML</a>
 				<ul>
-					<li>获取</li>
-					<li>设置</li>
-					<li>添加</li>
-					<li>删除</li>
-					<li>CSS 类</li>
-					<li>css()</li>
-					<li>尺寸</li>
+					<li><a href="#jQuery-basic-2.1">获取内容、 设置</a></li>
+					<li><a href="#jQuery-basic-2.2">添加</a></li>
+					<li><a href="#jQuery-basic-2.3">删除</a></li>
+					<li><a href="#jQuery-basic-2.4">CSS 类</a></li>
+					<li><a href="#jQuery-basic-2.5">css()</a></li>
+					<li><a href="#jQuery-basic-2.6">尺寸</a></li>
 				</ul>
 			</li>
-			<li>遍历
+			<li><a href="#jQuery-basic-3">遍历</a>
 				<ul>
-					<li>遍历</li>
-					<li>祖先</li>
-					<li>后代</li>
-					<li>同胞</li>
-					<li>过滤</li>
+					<li><a href="#jQuery-basic-3.1">祖先</a></li>
+					<li><a href="#jQuery-basic-3.2">后代</a></li>
+					<li><a href="#jQuery-basic-3.3">同胞</a></li>
+					<li><a href="#jQuery-basic-3.4">过滤</a></li>
 				</ul>
 			</li>
-			<li>AJAX
+			<li><a href="#jQuery-basic-4">AJAX</a>
 				<ul>
-					<li>AJAX 简介</li>
-					<li>加载</li>
-					<li>Get/Post</li>
+					<li><a href="#jQuery-basic-4.1">加载</a></li>
+					<li><a href="#jQuery-basic-4.2">Get/Post</a></li>
 				</ul>
 			</li>
-			<li>杂项
+			<li><a href="#jQuery-basic-5">杂项</a>
 				<ul>
-					<li>jQuery 和其他 JavaScript 框架</li>
+					<li><a href="#jQuery-basic-5.1">jQuery 和其他 JavaScript 框架</a></li>
 				</ul>
 			</li>
+		</ul>
+	</li>
+	<li><a href="#jQuery-trick-1">jQuery陷阱</a>
+		<ul>
+			<li><a href="#jQuery-trick-1.1">延时</a></li>
 		</ul>
 	</li>
 </ol>
@@ -60,11 +62,14 @@
 - jQuery CSS 操作
  - http://www.w3school.com.cn/jquery/jquery_ref_css.asp
 
+<a id="jQuery-basic"></a>
 ## jQuery基础
+<a id="jQuery-basic-1"></a>
 ### 效果
 隐藏、显示、切换，滑动，淡入淡出，以及动画
 - slow，fast，normal或毫秒
 
+<a id="jQuery-basic-1.1"></a>
 #### 隐藏、显示、切换
 - hide()
 - show()
@@ -75,6 +80,7 @@ $("#hide").click(function(){
 });
 ```
 
+<a id="jQuery-basic-1.2"></a>
 #### 淡入淡出
 - fadeIn()
 - fadeOut()
@@ -95,6 +101,7 @@ $("button").click(function(){
 });
 ```
 
+<a id="jQuery-basic-1.3"></a>
 #### 滑动
 - slideDown()
 - slideUp()
@@ -105,6 +112,7 @@ $("#flip").click(function(){
 });
 ```
 
+<a id="jQuery-basic-1.4"></a>
 #### 动画
 **提示**：
 - 默认地，所有 HTML 元素都有一个静态位置，且无法移动。
@@ -131,6 +139,7 @@ $("button").click(function(){
 });
 ```
 
+<a id="jQuery-basic-1.5"></a>
 #### 停止动画
 - stop()
 ```
@@ -139,6 +148,7 @@ $("#stop").click(function(){
 });
 ```
 
+<a id="jQuery-basic-1.6"></a>
 #### Callback
 - 防止动画之后的语句可能会产生错误或页面冲突
 ```
@@ -151,7 +161,7 @@ alert("The paragraph is now hidden");
 $("p").hide(1000);
 alert("The paragraph is now hidden");
 ```
-
+<a id="jQuery-basic-1.7"></a>
 #### Chaining
 
 ```
@@ -161,13 +171,15 @@ $("#p1").css("color","red")
 ```
 
 ----------
-
+<a id="jQuery-basic-2"></a>
 ### HTML
-#### 获取内容
+<a id="jQuery-basic-2.1"></a>
+#### 获取内容&设置
 - text() - 设置或返回所选元素的文本内容
 - html() - 设置或返回所选元素的内容（包括 HTML 标记）
 - val() - 设置或返回表单字段的值
 - attr() - 设置/改变属性值
+
 ```
 $("#btn1").click(function(){
   alert("Text: " + $("#test").text());
@@ -182,12 +194,13 @@ $("button").click(function(){
   });
 });
 ```
-
+<a id="jQuery-basic-2.2"></a>
 #### 添加元素
 - append() - 在被选元素的结尾插入内容
 - prepend() - 在被选元素的开头插入内容
 - after() - 在被选元素之后插入内容
 - before() - 在被选元素之前插入内容
+
 ```
   $("#btn1").click(function(){
     $("p").append(" <b>Appended text</b>.");
@@ -198,14 +211,17 @@ $("button").click(function(){
   });
 ```
 
+<a id="jQuery-basic-2.3"></a>
 #### 删除元素
 - remove() - 删除被选元素（及其子元素）
  - jQuery remove() 方法也可接受一个参数，允许您对被删元素进行过滤。
 - empty() - 从被选元素中删除子元素
+
 ```
 $("p").remove(".italic");
 ```
 
+<a id="jQuery-basic-2.4"></a>
 #### CSS类
 - addClass() - 向被选元素添加一个或多个类
 - removeClass() - 从被选元素删除一个或多个类
@@ -226,6 +242,7 @@ $("button").click(function(){
 });
 ```
 
+<a id="jQuery-basic-2.5"></a>
 #### css()
 设置或返回被选元素的一个或多个样式属性。
 - 返回**首个**匹配元素的 background-color 值
@@ -245,6 +262,7 @@ $("p").css({
 });
 ```
 
+<a id="jQuery-basic-2.6"></a>
 #### 尺寸
 - width()
  - 设置或返回元素的宽度（不包括内边距、边框或外边距）
@@ -269,8 +287,9 @@ $("button").click(function(){
 ```
 
 ----------
-
+<a id="jQuery-basic-3"></a>
 ### 遍历
+<a id="jQuery-basic-3.1"></a>
 #### 祖先
 - parent()
 - parents()
@@ -281,6 +300,7 @@ $(document).ready(function(){
 });
 ```
 
+<a id="jQuery-basic-3.2"></a>
 #### 后代
 - children()
 - find()
@@ -300,6 +320,8 @@ $(document).ready(function(){
   $("div").find("*");
 });
 ```
+
+<a id="jQuery-basic-3.3"></a>
 #### 同胞
 - siblings()
 - next()
@@ -314,6 +336,7 @@ $(document).ready(function(){
 });
 ```
 
+<a id="jQuery-basic-3.4"></a>
 #### 过滤
 - first()
 - last()
@@ -337,7 +360,9 @@ $(document).ready(function(){
 
 ----------
 
+<a id="jQuery-basic-4"></a>
 ### AJAX
+<a id="jQuery-basic-4.1"></a>
 #### 加载
 - load()
 
@@ -372,6 +397,8 @@ $("button").click(function(){
   });
 });
 ```
+
+<a id="jQuery-basic-4.2"></a>
 #### Get/Post
 - GET - 从指定的资源请求数据
  - GET 方法可能返回缓存数据
@@ -416,7 +443,9 @@ Response.Write("Hope you live well in " & city & ".")
 %>
 ```
 
+<a id="jQuery-basic-5"></a>
 ### 杂项
+<a id="jQuery-basic-5.1"></a>
 #### jQuery 和其他 JavaScript 框架
 - noConflict()
 
@@ -446,4 +475,29 @@ jQuery(document).ready(function($){
     $("p").text("jQuery 仍在运行！");
   });
 });
+```
+
+----------
+
+<a id="jQuery-trick-1"></a>
+### jQuery陷阱
+<a id="jQuery-trick-1.1"></a>
+#### 延时
+- 所有指令统一写在setTimeout里，不是setTimeout后面
+- hide函数里必须放一个0,不然延时不起作用 ```hide(0);```
+
+```
+    $(function() {
+        setTimeout(function() {
+            $("divid").show();
+        }, 6000);
+    }) >
+```
+
+```
+     /**
+      * 1.delay函数是jquery 1.4.2新增的函数
+      * 2.hide函数里必须放一个0,不然延时不起作用
+      */
+     $('#divid').delay(6000).hide(0);
 ```

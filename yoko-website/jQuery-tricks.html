@@ -1,0 +1,117 @@
+<script>
+    // $(document).ready(function() {
+    //     alert("It is ready! (Original method)");
+    // });
+    //&& alert("doing something");
+    r(function() {
+        //alert("It is ready (trick)");  
+    });
+
+    function r(f) {
+        /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) : f()
+    }
+    //document.addEventListener('DOMContentLoaded', f);
+
+    //is() method
+    var info = $('#info');
+    info.is("div") && console.log("It is a div");
+    info.is(':not(:visible)') && console.log("It has .test class");
+    info.animate({
+        'width': 200
+    }, 1);
+    info.is(':animated') && console.log("it is animated!");
+
+    //How many elements does your page have?
+    console.log('This page has ' + $('*').length + ' elements!');
+    var p1 = document.getElementsByTagName('div');
+    console.log("This page has " + p1.length + " div");
+
+    //Define an exist() function
+    jQuery.fn.exists = function() {
+        return this.length > 0;
+    }
+    console.log($('#info').exists() ? "exists!" : "doesn't exists!");
+
+    //Use the second argument to the $() function
+    var div = $('<div>', {
+        "class": "test",
+        "css": {
+            "background-color": "purple"
+        },
+        "width": 20,
+        "height": 20,
+        "animate": { // You can use any jQuery method as a property!
+            "width": 200,
+            "height": 50
+        }
+    });
+    div.appendTo('#content-info');
+
+    $('span', '#info').each(function() {
+        console.log($(this).html());
+    }); //等同于  $('#info').find('li');
+
+    //Master the end() method
+    var breakfast = $('#meals .breakfast');
+    breakfast.find('.eggs').text('Yes')
+        .end() // back to breakfast
+        .find('.toast').text('Yes')
+        .end()
+        .find('.juice').toggleClass('juice coffee')
+        .text('Yes');
+    breakfast.find('li').each(function() {
+        console.log(this.className + ': ' + this.textContent);
+    });
+
+    //10. Prevent right clicking ???
+    $(function() {
+        $(document).on("contextmenu", function(e) {
+            e.preventDefault();
+        });
+    });
+
+    //Break out of iframes  ???
+    if (window != window.top) {
+        window.top.location = window.location;
+    }
+
+    //Parse URLs with Anchor Elements 
+    // You want to parse this address into parts:
+    var url = 'http://tutorialzine.com/books/jquery-trickshots?trick=12#comments';
+    // The trick; create a new link with the url as its href:
+    var a = $('<a>', {
+        href: url
+    });
+    console.log('Host name: ' + a.prop('hostname'));
+    console.log('Path: ' + a.prop('pathname'));
+    console.log('Query: ' + a.prop('search'));
+    console.log('Protocol: ' + a.prop('protocol'));
+    console.log('Hash: ' + a.prop('hash'));
+
+    //13. Make your stylesheet editable  ???
+    $('#regular-style-block').css({
+            'display': 'block',
+            'white-space': 'pre'
+        })
+        .attr('contentEditable', true);
+
+    //14.Prevent text from being selectable
+    $('p.descr').attr('unselectable', 'on')
+        .css('user-select', 'none')
+        .on('selectstart', false);
+
+    //Keep DOM touches to a minimum
+    var elem = $('#info'),
+        arr = [];
+    for (var i = 0; i < 100; i++) {
+        arr.push('<li>' + i + '</li>');
+    }
+    elem.append(arr.join(''));
+
+    console.time('label');
+
+    //Dont't wait for the load event
+    $(document).on('click', '#clickMe', function() {
+        alert('Hey handsome!');
+    });
+</script>

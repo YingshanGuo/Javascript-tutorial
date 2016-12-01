@@ -2,7 +2,7 @@
 
 
 <ol>
-    <li>CSS常见问题（含LESS语法）
+    <li><a href="#question">CSS常见问题（含LESS语法）</a>
     <ul>
         <li><a href="#question-1.1">span 标签插入图片</a>
         <ul>
@@ -29,7 +29,24 @@
                 <li>在div里添加style="display: none;</li>
             </ul>
         </li>
+        <li><a href="#question-1.6">background</a>
+            <ul>
+                <li>image 居中</li>
+                <li>image 全屏</li>
+            </ul>
+        </li>
     </ul>
+    </li>
+    <li><a href="#tricks-1">CSS Tricks</a>
+             <ul>
+                <li><a href="#tricks-1.1">居中</a>
+                  <ul>
+                    <li><a href="#tricks-1.1.1">水平居中</a></li>
+                    <li><a href="#tricks-1.1.2">垂直居中</a></li>
+                    <li><a href="#tricks-1.1.3">绝对居中</a></li>
+                  </ul>
+                </li>
+            </ul>
     </li>
     <li>选择器 Selectors
              <ul>
@@ -38,10 +55,11 @@
             </ul>
     </li>
     </ol>
-
+<a id="question-1"></a>
 ## CSS 常见问题（以下内容包含LESS语法）
 <a id="question-1.1"></a>
-- span 标签插入图片   background需要加入```display: inline-block; ```
+### span 标签插入图片  
+ background需要加入```display: inline-block; ```
    - 否则图片无法显示出来
    - PS: less语法
 
@@ -59,7 +77,8 @@ homework-icon: url(../images/student/icons.png);
 }
 ```
 <a id="question-1.2"></a>
--  分栏布局      需要加入  ```box-sizing: border-box;```
+### 分栏布局    
+  需要加入  ```box-sizing: border-box;```
   - 否则导致div被挤到下一行
 
 ```
@@ -72,7 +91,8 @@ homework-icon: url(../images/student/icons.png);
 }
 ```
 <a id="question-1.3"></a>
--  2个 img中间 出现空格   需要添加```font-size: 0px;```
+### 2个 img中间 出现空格   
+需要添加```font-size: 0px;```
   - 否则中间的空隙无法去除
 
 ```
@@ -82,7 +102,8 @@ homework-icon: url(../images/student/icons.png);
 </div>
 ```
 <a id="question-1.4"></a>
--  遮罩    需要添加   透明度``` opacity: 0.9;    ```
+### 遮罩    
+需要添加   透明度``` opacity: 0.9;    ```
 
 ```
  #mask {
@@ -99,7 +120,8 @@ homework-icon: url(../images/student/icons.png);
     }
 ```
 <a id="question-1.5"></a>
--  要获取div的display值，需要在div里添加```style="display: none;"```
+### 要获取div的display值
+需要在div里添加```style="display: none;"```
    - 不能在css里写，js无法读取
 
 ```
@@ -113,6 +135,51 @@ homework-icon: url(../images/student/icons.png);
             mask[n].style.display = 'none';
         }
     }
+```
+<a id="question-1.6"></a>
+### background
+#### image 居中
+
+```
+background:url(logo.png) center center no-repeat;
+```
+
+#### image 全屏
+
+```
+background-size:100% 100%;
+```
+
+----------
+
+<a id="trick-1"></a>
+## CSS Tricks
+<a id="trick-1.1"></a>
+### 居中    
+<a id="trick-1.1.1"></a>
+#### 水平居中
+
+```
+display：flex;
+justity-content:center;
+```
+
+<a id="trick-1.1.2"></a>
+#### 垂直居中
+
+```
+
+```
+<a id="trick-1.1.3"></a>
+#### 绝对居中
+
+```
+position: absolute;
+margin:auto;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
 ```
 
 ----------
