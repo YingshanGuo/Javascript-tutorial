@@ -45,9 +45,14 @@
 			</li>
 		</ul>
 	</li>
-	<li><a href="#jQuery-trick-1">jQuery陷阱</a>
+	<li><a href="#jQuery-tricks">jQuery技巧</a>
 		<ul>
-			<li><a href="#jQuery-trick-1.1">延时</a></li>
+			<li><a href="#jQuery-tricks-1">延时</a></li>
+			<li><a href="#jQuery-tricks-2">自定义方法</a>
+				<ul>
+					<li><a href="#jQuery-tricks-2.1">toggleText</a>
+				</ul>
+			</li>
 		</ul>
 	</li>
 </ol>
@@ -479,10 +484,10 @@ jQuery(document).ready(function($){
 
 ----------
 
-<a id="jQuery-trick-1"></a>
-### jQuery陷阱
-<a id="jQuery-trick-1.1"></a>
-#### 延时
+<a id="jQuery-tricks"></a>
+## jQuery技巧
+<a id="jQuery-tricks-1"></a>
+### 延时
 - 所有指令统一写在setTimeout里，不是setTimeout后面
 - hide函数里必须放一个0,不然延时不起作用 ```hide(0);```
 
@@ -500,4 +505,24 @@ jQuery(document).ready(function($){
       * 2.hide函数里必须放一个0,不然延时不起作用
       */
      $('#divid').delay(6000).hide(0);
+```
+
+
+<a id="jQuery-tricks-2"></a>
+### 自定义方法
+<a id="jQuery-tricks-2.1"></a>
+#### toggleText
+
+```
+jQuery.fn.toggleText = function (value1, value2) {
+		return this.each(function () {
+				var $this = $(this),
+						text = $this.text();
+
+				if (text.indexOf(value1) > -1)
+						$this.text(text.replace(value1, value2));
+				else
+						$this.text(text.replace(value2, value1));
+		});
+};
 ```

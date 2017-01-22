@@ -1,6 +1,6 @@
 # CSS
 
-
+#### 目录
 <ol>
     <li><a href="#question">CSS常见问题（含LESS语法）</a>
     <ul>
@@ -33,17 +33,35 @@
             <ul>
                 <li>image 居中</li>
                 <li>image 全屏</li>
+                <li>image 拉伸</li>
             </ul>
         </li>
     </ul>
     </li>
-    <li><a href="#tricks-1">CSS Tricks</a>
+    <li><a href="#css-tricks">CSS Tricks</a>
              <ul>
-                <li><a href="#tricks-1.1">居中</a>
+                <li><a href="#css-tricks-1">居中</a>
                   <ul>
-                    <li><a href="#tricks-1.1.1">水平居中</a></li>
-                    <li><a href="#tricks-1.1.2">垂直居中</a></li>
-                    <li><a href="#tricks-1.1.3">绝对居中</a></li>
+                    <li><a href="#css-tricks-1.1">水平居中</a></li>
+                    <li><a href="#css-tricks-1.2">垂直居中</a></li>
+                    <li><a href="#css-tricks-1.3">绝对居中</a></li>
+                  </ul>
+                </li>
+                <li><a href="#css-tricks-2">动画&特效</a>
+                  <ul>
+                    <li><a href="#css-tricks-2.1">旋转</a></li>
+                    <li><a href="#css-tricks-2.2">三角形</a></li>
+                  </ul>
+                </li>
+                <li><a href="#css-tricks-3">鼠标、光标</a>
+                  <ul>
+                    <li><a href="#css-tricks-3.1">手指</a></li>
+                  </ul>
+                </li>
+                <li><a href="#css-tricks-4">文本</a>
+                  <ul>
+                    <li><a href="#css-tricks-4.1">可编辑</a></li>
+                    <li><a href="#css-tricks-4.2">文字过长省略</a></li>
                   </ul>
                 </li>
             </ul>
@@ -150,38 +168,153 @@ background:url(logo.png) center center no-repeat;
 background-size:100% 100%;
 ```
 
+#### image 拉伸
+- 顺序不能翻转  
+
+```
+background:url('../../static/images/login/bg0.png') no-repeat  0 0 / 100% 100% rgba(0, 0, 0, 0);
+  background-size:100% 100%;
+
+```
 ----------
 
-<a id="trick-1"></a>
+<a id="css-tricks"></a>
 ## CSS Tricks
-<a id="trick-1.1"></a>
+<a id="css-tricks-1"></a>
 ### 居中    
-<a id="trick-1.1.1"></a>
+<a id="css-tricks-1.1"></a>
 #### 水平居中
 
 ```
-display：flex;
-justity-content:center;
+display: flex;
+justify-content: center;    /* 水平居中 */
 ```
-
-<a id="trick-1.1.2"></a>
+<a id="css-tricks-1.2"></a>
 #### 垂直居中
 
 ```
-
+display: flex;
+align-items: center;       
 ```
-<a id="trick-1.1.3"></a>
+<a id="css-tricks-1.3"></a>
 #### 绝对居中
 
 ```
-position: absolute;
-margin:auto;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
+div {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-color: pink; /* 方便看效果 */
+}
 ```
+- 利用 flex 布局
+  - 实际使用时应考虑兼容性
 
+```
+.container {
+    display: flex;
+    align-items: center;        /* 垂直居中 */
+    justify-content: center;    /* 水平居中 */
+
+}
+.container div {
+    width: 100px;
+    height: 100px;
+    background-color: pink;     /* 方便看效果 */
+}  
+```
+- 未知容器的宽高，利用 `transform` 属性  
+
+```
+div {
+    width:500px;
+    height:300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;     /* 相对定位或绝对定位均可 */
+    background-color: pink;     /* 方便看效果 */
+
+}
+```
+<a id="css-tricks-2"></a>
+### 动画&特效
+<a id="css-tricks-2.1"></a>
+#### 旋转
+
+```
+.profile-circle-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    left: 65px;
+    top: 35px;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.profile-circle-img:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+}
+```
+<a id="css-tricks-2.2"></a>
+#### 三角形
+- 推荐用第一个方法
+
+```
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left:20px solid transparent;
+  border-right:20px solid transparent;
+  border-bottom:20px solid black;
+}
+```
+```
+#demo {
+  width: 0;
+  height: 0;
+  border-width: 20px;
+  border-style: solid;
+  border-color: transparent transparent red transparent;
+}
+```
+<a id="css-tricks-3"></a>
+### 鼠标、光标
+<a id="css-tricks-3.1"></a>
+#### 手指
+
+```
+cursor:pointer;
+```
+<a id="css-tricks-4"></a>
+### 文本
+<a id="css-tricks-4.1"></a>
+#### 可编辑文本
+```
+<p contenteditable="true">这是一段可编辑的段落。请试着编辑该文本。</p>
+```
+<a id="css-tricks-4.2"></a>
+#### 文字超长省略
+```
+{
+ max-width:150px;
+ white-space:nowrap;  /*强制文本在一行内显示*/
+ text-overflow:ellipsis;   /*文字超出省略*/
+ overflow:hidden;
+ }
+ ```
 ----------
 
 ### 选择器 Selectors

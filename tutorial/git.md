@@ -29,3 +29,10 @@
 - git stash
 - git stash list
 - git stash pop filename{munber}
+
+#### 分支
+- git checkout -b  test  更换为分支
+
+#### 合并
+- git log
+- git merge (master)
