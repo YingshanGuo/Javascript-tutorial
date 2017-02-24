@@ -53,6 +53,7 @@
 					<li><a href="#jQuery-tricks-2.1">toggleText</a>
 				</ul>
 			</li>
+			<li><a href="#Query-tricks-3">判断data-name</a></li>
 		</ul>
 	</li>
 </ol>
@@ -525,4 +526,18 @@ jQuery.fn.toggleText = function (value1, value2) {
 						$this.text(text.replace(value2, value1));
 		});
 };
+```
+
+<a id="jQuery-tricks-3"></a>
+### 判断data-name  
+
+- 判断 data-name 是否等于honour  
+
+```
+<div class="content-box growup fl honour" data-name="honour">
+</div>
+
+if ( $(this).data('name') === 'honour' ){
+	$(document).find(".li-score").hide();
+}
 ```
