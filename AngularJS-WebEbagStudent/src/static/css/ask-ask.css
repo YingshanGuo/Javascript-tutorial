@@ -1,0 +1,314 @@
+ .fl {
+    float: left;
+}
+
+.bg-green {}
+
+.qform-title {
+    height: 63px;
+    line-height: 70px;
+    position: relative;
+    font-size: 24px;
+    color: #000;
+    padding-left: 70px;
+}
+
+.qform-title span {
+    display: inline-block;
+    position: absolute;
+    z-index: 2;
+    font-size: 19.200000000000003px;
+    height: 30px;
+    line-height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    text-align: center;
+    top: 12px;
+    right: 0.5rem;
+    cursor: pointer;
+}
+
+.qform-title span:active {
+    background: #06bb9b
+}
+
+.qform-filter {
+    height: 90px;
+    line-height: 42.00000000000001px;
+    background: #fff;
+    padding-left: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.qform-filter span {
+    font-size: 14.4px;
+    color: #555555;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.qform-filter a {
+    text-decoration: none;
+    line-height: 18px;
+    color: #555555;
+    font-size: 14.4px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 1.8px;
+}
+
+.qform-filter a.hide {
+    display: none;
+}
+
+.qform-filter a.active {
+    color: #fff;
+    background: #06bb9b;
+}
+
+#qa_qform div.qformbackdiv {
+    position: absolute;
+    top: 0.8rem;
+    left: 1.5rem;
+    width: 3.0rem;
+    height: 3.0rem;
+    display: inline-block;
+    background: url("../images/back1.png") no-repeat scroll 0 0px transparent;
+    background-size: 100% 100%;
+    opacity: 1;
+}
+
+#qa_qform div.qformbackdiv:active {
+    opacity: 0.8;
+}
+
+#qa_qform div.qforms8sbndiv {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 115px;
+    height: 32px;
+    display: inline-block;
+    background: url("../images/qforms8s_pc.png") no-repeat scroll 0 0px transparent;
+    opacity: 1;
+    cursor: pointer;
+}
+
+#qa_qform div.qforms8sbndiv:hover {
+    opacity: 0.8;
+}
+
+#qa_qform div.qformsubmitbndiv {
+    width: 75px;
+    height: 35px;
+    display: inline-block;
+    background: url("../images/button.png") no-repeat scroll 0 -72px;
+    transparent;
+    opacity: 1;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+#qa_qform div.qformsubmitbndiv:hover {
+    background-position: 0 -108px;
+}
+
+#qa_qform div.qformreturnbndiv {
+    width: 75px;
+    height: 35px;
+    display: inline-block;
+    background: url("../images/button.png") no-repeat scroll 0 -288px;
+    transparent;
+    opacity: 1;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+#qa_qform div.qformreturnbndiv:hover {
+    background-position: 0 -324px;
+}
+
+.qform-img {
+    width: 450px;
+    border-radius: 5px;
+    background: #fff;
+    margin: 0 10px 10px 10px;
+    height: 320px;
+    overflow: hide;
+}
+
+.qform-img div {
+    width: 93%;
+    height: 140px;
+    margin-top: 10px;
+    margin-left: 14.34px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 140px;
+}
+
+.qform-img span.addimgtextspan {
+    font-size: 18px;
+    line-height: 18px;
+    position: absolute;
+    top: 110px;
+    width: 100%;
+    left: 0px;
+}
+
+.qform-img .addimg {
+    font-size: 5rem;
+    font-size: bold;
+    color: #666666;
+    background: #f2f2f2;
+    cursor: pointer;
+    position: relative
+}
+
+.qform-img div img {
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+
+.qform-img div .close {
+    position: absolute;
+    top: 0px;
+    width: 23.900000000000002px;
+    height: 23.900000000000002px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    text-align: center;
+    line-height: 23.900000000000002px;
+    cursor: pointer;
+}
+
+.qform-img div .close:active {
+    background-color: rgba(240, 127, 41, .5);
+}
+
+.qform-img span.s8s-toast {
+    color: #888888;
+    text-align: center;
+    padding: 0.5rem 0 0 0;
+    display: none;
+}
+
+.qform-input-s8s {
+    text-align: center;
+}
+
+.qform-input-text {
+    height: 240px;
+    width: 450px;
+    border-radius: 5px;
+    background: #fbfbfb;
+    margin-top: 1rem;
+    border: 1px solid #dddddd;
+}
+
+.qform-input-text textarea {
+    font-size: 16px;
+    border: none;
+    background: transparent;
+    width: 98%;
+    height: 98%;
+    padding-top: 10px;
+    padding-right: 16px;
+    padding-left: 16px;
+    resize: none;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+.qform-footer {
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    clear: both;
+    height: 90px;
+    line-height: 90px;
+    text-indent: 93.68px;
+    background: url('../images/footer1.png') no-repeat 28.68px 18px, url('../images/footer2.png') no-repeat 884.3000000000001px 18px;
+    background-size: 45px 45px;
+    color: #333;
+    font-size: 16px;
+}
+
+.qform-footer span {
+    color: #222222;
+    font-weight: bold;
+    font-size: 25.6px;
+}
+
+div.qform_classnamearraw {
+    float: right;
+    height: 20px;
+    width: 20px;
+    padding: 10px;
+    background: url("../images/arrawright.png") no-repeat scroll center center transparent;
+}
+
+.qform_userchoicediv {
+    cursor: pointer;
+    padding-left: 16px;
+    color: #666666;
+    height: 40px;
+    line-height: 40px;
+    width: 434px;
+    border-radius: 5px;
+    background: #fbfbfb;
+    margin-top: 10px;
+    border: 1px solid #dddddd;
+    font-size: 18px;
+}
+
+#qa_qform {
+    z-index: 15;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 956px;
+    height: 100%;
+    background: #ffffff;
+}
+
+#qa_qform .askteam_btn {
+    width: 6rem;
+    height: 5rem;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    background: url(../images/ask_new/askteam.png) center center no-repeat;
+    background-size: 100% auto;
+}
+
+#qa_qform .qform_subjectdiv {
+    color: #666666;
+    height: 40px;
+    line-height: 70px;
+    margin: 10px 0 0 23px;
+    font-size: 18px;
+    width: 900px;
+    padding-left: 14px;
+    height: 70px;
+    background: url("../images/bg_filter_01.png") no-repeat scroll 0 0 transparent;
+}
+
+#qa_qform .subjectbndiv {
+    display: inline-block;
+    color: #666666;
+    background: transparent;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+#qa_qform .subjectbndiv.click {
+    background: #06bb9c;
+    color: #fff;
+}

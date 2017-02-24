@@ -1,0 +1,54 @@
+.container .main .content {
+    margin: 0 22px;
+    overflow: hidden;
+}
+
+.growup-class {
+    display: inline-block;
+    padding-left: 8px;
+}
+
+.growup-class .growup-class-title {
+    padding: 2px 0px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 142px;
+}
+
+.growup-class .growup-class-info {
+    vertical-align: top;
+    color: #a4a4a4;
+}
+
+
+/*growup-detail*/
+
+div.scoretablediv {
+    display: inline-block;
+    cursor: pointer;
+    width: 129px;
+    height: 63px;
+    line-height: 77px;
+    text-align: center;
+    font-size: 14px;
+    color: #0691d0;
+}
+
+div.scoretablediv.check {
+    color: #000;
+    background: url(../images/bg_fav_tab.png) no-repeat;
+    font-weight: bold;
+}
+
+
+/*# sourceMappingURL=growup.css.map */
+
+
+/*# sourceMappingURL=growup.css.map */
+
+
+/*# sourceMappingURL=growup.css.map */

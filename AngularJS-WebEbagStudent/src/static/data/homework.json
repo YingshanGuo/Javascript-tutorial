@@ -1,0 +1,68 @@
+ {
+     "chineseHomework": [{
+
+             "id": 1,
+             "name": "第一单元 [课前导学] 今晚就去浪",
+             "count": "2",
+             "info": "补做"
+         },
+         {
+
+             "id": 2,
+             "name": "第一单元 [课前导学] 明天出去浪",
+             "count": "3",
+             "info": "完成"
+         },
+         {
+
+             "id": 3,
+             "name": "第一单元 [课前导学] 后天还是去浪",
+             "count": "6",
+             "info": "补做"
+         }
+     ],
+     "mathHomework": [{
+
+             "id": 1,
+             "name": "第一课时  今晚就去浪",
+             "count": "2",
+             "info": "补做"
+         },
+         {
+
+             "id": 2,
+             "name": "第一课时  明天出去浪",
+             "count": "3",
+             "info": "完成"
+         },
+         {
+
+             "id": 3,
+             "name": "第一课时  后天还是去浪",
+             "count": "6",
+             "info": "补做"
+         }
+     ],
+     "englishHomework": [{
+
+             "id": 1,
+             "name": "Lesson 1 今晚就去浪",
+             "count": "2",
+             "info": "补做"
+         },
+         {
+
+             "id": 2,
+             "name": "Lesson 2 明天出去浪",
+             "count": "3",
+             "info": "完成"
+         },
+         {
+
+             "id": 3,
+             "name": "Lesson 3 后天还是去浪",
+             "count": "6",
+             "info": "补做"
+         }
+     ]
+ }

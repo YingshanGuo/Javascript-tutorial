@@ -1,0 +1,32 @@
+{
+    "name": "AngularJS-test",
+    "version": "1.0.0",
+    "description": "AngularJS-test",
+    "keywords": [
+        "AngularJS-test"
+    ],
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^3.1.1",
+        "gulp-cached": "^1.1.0",
+        "gulp-changed": "^1.3.2",
+        "gulp-clean": "^0.3.2",
+        "gulp-css-spritesmith": "^0.0.5",
+        "gulp-debug": "^2.1.2",
+        "gulp-file-include": "^1.0.0",
+        "gulp-imagemin": "^3.1.1",
+        "gulp-less": "^3.1.0",
+        "gulp-load-plugins": "^1.3.0",
+        "gulp-minify-css": "^1.2.4",
+        "gulp-obfuscate": "^0.2.9",
+        "gulp-plumber": "^1.1.0",
+        "gulp-sass": "^2.3.2",
+        "gulp-uglify": "^2.0.0",
+        "gulp-util": "^3.0.7",
+        "angular": "1.5.x",
+        "angular-mocks": "1.5.x",
+        "angular-resource": "1.5.x",
+        "angular-route": "1.5.x",
+        "bootstrap": "3.3.x"
+    }
+}

@@ -1,0 +1,597 @@
+/*我的作业*/
+.container .main.homework {
+  margin: 0 22px;
+  overflow: hidden;
+}
+.content .content-box {
+  width: 908px;
+  margin: -22px 21px 0;
+  border: 3px solid #E1E1E1;
+  border-radius: 12px;
+}
+.content .content-box .blank {
+  width: 100%;
+  height: 20px;
+  background: #FFF;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.icon-history {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url("../images/icons.png") -340px -50px no-repeat;
+}
+.icon-makeup {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url(../images/icons.png) -20px -50px no-repeat;
+}
+/* homework */
+.content .location {
+  padding: 15px 140px;
+}
+.content .homework-header {
+  width: 900px;
+  margin: 0 28px 20px;
+  padding: 5px 0 10px;
+  border-bottom: 1px dotted #CECDCC;
+}
+.homework-header .title {
+  padding: 5px 0;
+  font-size: 20px;
+}
+.homework-header p {
+  font-size: 14px;
+  line-height: 2;
+}
+.homework-header .state {
+  right: 55px;
+}
+.homework-header .state .time {
+  top: 50px;
+  left: 43px;
+  font-family: "Microsoft YaHei";
+  color: #666;
+}
+.homework-header .state .time span {
+  color: #FF8700;
+  font-weight: bold;
+}
+.homework-header .state.timeout .mask {
+  display: inline-block;
+  top: 15px;
+  left: 12px;
+  width: 100px;
+  height: 55px;
+  background: #FFF;
+}
+.homework-header .state.timeout .mask span {
+  width: 70px;
+  height: 30px;
+  margin: 15px 0 0 27px;
+  background: url("../images/icons.png") -170px -195px no-repeat;
+}
+.content.homework-details .left {
+  width: 670px;
+  margin-left: 28px;
+  border-right: 1px dotted #CECDCC;
+}
+.content.homework-details .right {
+  width: 220px;
+  margin-left: -1px;
+  padding-left: 10px;
+  border-left: 1px dotted #CECDCC;
+}
+.homework-details .summary p {
+  line-height: 2;
+}
+span.sound {
+  padding: 3px;
+  border: 1px solid #DFD3D3;
+  border-radius: 3px;
+  background: #F3F3F3;
+}
+span.sound span {
+  vertical-align: middle;
+}
+span.sound .icon-sound {
+  margin-right: 5px;
+}
+.homework-details .data-list {
+  margin-right: 20px;
+  margin-top: -20px;
+  padding-bottom: 15px;
+}
+.homework-details .data-list .title {
+  padding: 20px 0;
+}
+.homework-details .data-list td {
+  border-bottom: 1px dotted #CECDCC;
+  padding: 6px 0;
+}
+.homework-details .data-list tr.last td {
+  border-bottom: none;
+}
+.homework-details .data-list tr:hover td {
+  background: #F1F1F1;
+  cursor: pointer;
+}
+.homework-details .data-list td.name a:hover {
+  text-decoration: none;
+}
+.homework-details .data-list td.name2 a:hover {
+  text-decoration: none;
+}
+.homework-details .data-list .index {
+  width: 30px;
+  text-indent: .5em;
+}
+.homework-details .data-list .name div {
+  width: 550px;
+  padding: 0 10px;
+}
+.homework-details .data-list .logo {
+  width: 30px;
+}
+.homework-details .data-list .logo img {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+.homework-details .data-list .state {
+  width: 20px;
+}
+.homework-details .data-list .name2 div {
+  width: 435px;
+  padding: 0 10px;
+}
+.homework-details .data-list .state2 {
+  width: 160px;
+  padding-right: 10px;
+}
+.student-list {
+  float: left;
+}
+.student-list .item {
+  width: 58px;
+  margin: 5px 7px;
+}
+.student-list .item img {
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  border: 1px solid #C8C8C8;
+}
+.container-blank span.dotted-split {
+  display: inline-block;
+  height: 100%;
+  width: 269px;
+  margin-left: -1px;
+  padding-left: 10px;
+  border-left: 1px dotted #CECDCC;
+}
+.container-blank {
+  text-align: right;
+}
+/* homeworkquery */
+.content.query .nav {
+  width: 830px;
+  margin: 18px 20px 5px 106px;
+}
+.query .nav .dropdown-bg {
+  width: 135px;
+  height: 48px;
+  background: url("../images/bg_class_title.png") no-repeat;
+}
+.dropdown-bg .dropdown {
+  z-index: 9;
+  margin: 10px 0 0 50px;
+}
+.dropdown b {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-top: 5px solid #000;
+  vertical-align: middle;
+}
+.dropdown .tooltip.options {
+  top: 16px;
+  left: 0;
+}
+.dropdown .tooltip.options > div {
+  padding: 6px 10px;
+  border-bottom: 1px dotted #CECDCC;
+}
+.dropdown .tooltip.options > div:hover {
+  background: #EFEFEF;
+}
+.dropdown:hover .tooltip.options {
+  display: block;
+}
+.tabs .tab {
+  float: left;
+  width: 90px;
+  height: 30px;
+  background: url("../images/bgs_query.png") -90px 0 no-repeat;
+  font-size: 14px;
+  text-align: center;
+  line-height: 23px;
+  cursor: pointer;
+  margin: 10px 0 10px 10px;
+}
+.tab.checked {
+  background-position: 0 0;
+  color: #FFF;
+}
+.filter .top {
+  height: 20px;
+  background: url("../images/bg_filter_top.png") no-repeat;
+}
+.filter .body {
+  background: url("../images/bg_filter_body.png") repeat-y;
+}
+.filter .body.time .watermark {
+  right: 20px;
+  width: 86px;
+  height: 86px;
+  background: url("../images/bg_homework_filter.png") no-repeat;
+}
+.filter .body.time .watermark.none {
+  display: none;
+}
+.filter .body.time .li {
+  margin: 0 30px;
+}
+.filter .body.time .li label {
+  display: inline-block;
+  float: left;
+  padding: 2px 5px;
+  vertical-align: top;
+}
+.filter .body.time .li div {
+  display: inline-block;
+  max-width: 806px;
+  overflow: hidden;
+}
+.filter .body.time .li span {
+  display: inline-block;
+  min-width: 90px;
+  padding: 2px 5px;
+}
+.filter .body.time .li span a:hover {
+  text-decoration: none;
+}
+.filter .body.time .li span.checked a {
+  color: #0195C0;
+  font-weight: bold;
+}
+.filter .body.time .li span a.disabled,
+.filter .body.time .li span a.disabled:hover {
+  color: #999;
+  cursor: default;
+}
+.content.query .chain {
+  width: 920px;
+  height: 56px;
+  margin: -11px 18px 0;
+  background: url("../images/bg_filter_chain.png") no-repeat;
+}
+.content .content-box.chapter .blank {
+  background: #F1F1F1;
+}
+.content .content-box.chapter > .title {
+  height: 35px;
+  background: #F1F1F1;
+  line-height: 35px;
+}
+.content-box.chapter > .title .wrapper {
+  display: inline-block;
+  position: relative;
+  z-index: 999;
+  cursor: pointer;
+}
+.content-box.chapter > .title .wrapper .icon {
+  display: inline-block;
+  width: 34px;
+  height: 29px;
+  background: url("../images/icon_contents.png") no-repeat;
+  vertical-align: middle;
+}
+.content-box.chapter > .title .wrapper b {
+  display: inline-block;
+  border: 8px solid transparent;
+  border-top-color: #767574;
+  border-bottom: 0;
+  line-height: 8px;
+  vertical-align: middle;
+}
+.content-box.chapter .pop-books {
+  left: 0;
+  top: 35px;
+  width: 554px;
+  padding: 10px;
+  border: 2px solid #7AC4D9;
+  border-radius: 4px;
+  box-shadow: 0 0 3px #000;
+  background: #FFF;
+  cursor: default;
+}
+.content-box.chapter .pop-books.book1 {
+  width: 140px;
+}
+.content-box.chapter .pop-books.book2 {
+  width: 278px;
+}
+.content-box.chapter .pop-books.book3 {
+  width: 418px;
+}
+.content-box.chapter .pop-books.book4 {
+  width: 554px;
+}
+.content-box.chapter .pop-books ul {
+  list-style: none;
+}
+.content-box.chapter .pop-books ul li {
+  display: inline-block;
+  _display: inline;
+  float: left;
+  position: relative;
+  width: 118px;
+  height: 205px;
+  margin: 10px;
+  background: url("../images/bg_book.png") no-repeat;
+  cursor: pointer;
+}
+.content-box.chapter .pop-books ul li .cover {
+  height: 159px;
+  width: 113px;
+  margin-top: 3px;
+  margin-left: 4px;
+}
+.content-box.chapter .pop-books ul li .icon-state {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 3px;
+  width: 29px;
+  height: 27px;
+  background: url("../images/icon_checked_book.png") no-repeat;
+}
+.content-box.chapter .pop-books ul li.checkedd .icon-state {
+  display: inline-block;
+}
+.content-box.chapter .pop-books ul li .txt {
+  margin-top: 5px;
+  line-height: 1.5;
+}
+.content-box.chapter > .title .wrapper:hover .pop-books {
+  display: block;
+}
+.history .data-table {
+  margin: 15px;
+}
+.row .date {
+  width: 100px;
+}
+.row .date .day {
+  width: 32px;
+  font-size: 28px;
+  font-family: arial;
+  line-height: 1;
+}
+.row .date p.week {
+  font: bold 16px "Microsoft YaHei";
+  text-align: right;
+}
+.row .data-wrapper {
+  width: 738px;
+  margin-left: 40px;
+  padding: 10px 0;
+  border-bottom: 1px dotted #CECDCC;
+}
+.row .last .data-wrapper {
+  border-bottom: none;
+}
+.row .data-wrapper .pointer {
+  left: -24px;
+  width: 2px;
+  background: #A8E3F4;
+  border-bottom: 1px solid #A8E3F4;
+}
+.row .first .data-wrapper .pointer {
+  background: #A8E3F4 url("../images/bg_history_top_bar.png") 0 -10px no-repeat;
+}
+.row .last .data-wrapper .pointer {
+  border-bottom: none;
+}
+.row .data-wrapper .pointer span {
+  top: 19px;
+  left: -6px;
+}
+.row .data-wrapper .data-row {
+  padding: 6px 0;
+}
+.row .data-wrapper .data-row:hover {
+  background: #F1F1F1;
+  cursor: pointer;
+}
+.row .data-wrapper .title {
+  width: 502px;
+}
+.row .data-wrapper .title a:hover {
+  text-decoration: none;
+}
+.row .data-wrapper .time {
+  width: 110px;
+}
+.row .data-wrapper .state {
+  width: 125px;
+}
+.row .data-wrapper .state .icon-finish,
+.row .data-wrapper .state .icon-makeup {
+  top: 0;
+  left: 16px;
+}
+.row .data-wrapper .state .icon-comment {
+  top: 1px;
+  right: 10px;
+}
+.history .loading,
+.chapter .loading,
+.growup .loading {
+  height: 35px;
+  margin-top: 20px;
+  line-height: 35px;
+}
+.growup .flower-count {
+  padding: 10px 0;
+  font-size: 20px;
+}
+.growup .data-table {
+  margin: 15px;
+}
+.content-box.growup .data-wrapper .title {
+  width: 730px;
+}
+.growup .row .data-wrapper .data-row:hover {
+  background: transparent;
+  cursor: default;
+}
+.chapter .chapter-wrapper {
+  margin-top: 15px;
+  background: url("../images/bg_split_chapter.gif") 221px 0 repeat-y;
+}
+.chapter .menu {
+  width: 220px;
+  margin-left: 12px;
+}
+.chapter .menu ul {
+  list-style: none;
+}
+.chapter .menu ul li {
+  margin-right: 40px;
+  border-bottom: 1px solid #E7E7E7;
+}
+.chapter .menu ul li.last {
+  height: auto;
+  padding: 0;
+  border-bottom: none;
+}
+.chapter .data-table {
+  width: 650px;
+  margin-left: 10px;
+}
+.chapter .row .data-wrapper {
+  margin-left: 0;
+}
+.chapter .row .data-wrapper {
+  width: 100%;
+}
+.chapter .row .data-wrapper .title {
+  width: 415px;
+}
+.menu .item li {
+  width: 195px;
+  height: 36px;
+  line-height: 36px;
+  cursor: pointer;
+}
+.menu .item .sub-item li {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+.menu .item li .pointer {
+  right: -16px;
+  width: 2px;
+  background: #A8E3F4;
+  border-bottom: 1px solid #A8E3F4;
+}
+.menu .item.first > li > .pointer {
+  background: #A8E3F4 url("../images/bg_history_top_bar.png") 0 -10px no-repeat;
+}
+.menu .item.last li .pointer {
+  border-bottom: none;
+}
+.menu .item li .pointer span {
+  display: none;
+  top: 9px;
+  left: -6px;
+}
+.chapter .menu .item li.checked {
+  border-bottom: none;
+  background: url("../images/bg_menu_item_checked.png") no-repeat;
+}
+.chapter .menu .item li.checked a {
+  color: #FFF;
+}
+.chapter .menu .item li .homework-count,
+.menu .item .title .homework-count {
+  top: 2px;
+  right: 5px;
+  color: #0092BA;
+}
+.chapter .menu .item li.checked .homework-count {
+  color: #FFF;
+}
+.menu .item .title b {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 5px;
+  border: 4px solid transparent;
+  border-bottom: 0;
+  vertical-align: middle;
+}
+.menu .item.expand .title b {
+  border-top: 4px solid #000;
+}
+.menu .item.expand .title.checked {
+  background: url("../images/bg_menu_item_checked.png") no-repeat;
+  color: #FFF;
+}
+.menu .item.expand .title.checked b {
+  border-top: 4px solid #FFF;
+}
+.menu .item.collapse .title b {
+  border: 4px solid transparent;
+  border-left: 4px solid #000;
+}
+.menu .item.none .title b {
+  border: 4px solid transparent;
+}
+.menu .item.collapse li.last {
+  display: none;
+}
+.menu .item .title > span {
+  display: inline-block;
+  width: 150px;
+}
+.menu .sub-item li a {
+  display: inline-block;
+  width: 135px;
+  margin-left: 35px;
+}
+/**/
+.icon-finished {
+  display: inline-block;
+  width: 126px;
+  height: 66px;
+  background: url("../images/icons.png") 0 -180px no-repeat;
+}
+.icon-unfinished {
+  display: inline-block;
+  width: 145px;
+  height: 90px;
+  background: url("../images/icons.png") -130px -180px no-repeat;
+}
+/*# sourceMappingURL=homework.css.map */
+/*# sourceMappingURL=homework.css.map */
+/*# sourceMappingURL=homework.css.map */
+/*# sourceMappingURL=homework.css.map */
+/*# sourceMappingURL=homework.css.map */
+/*# sourceMappingURL=homework.css.map */
+/*# sourceMappingURL=homework.css.map */

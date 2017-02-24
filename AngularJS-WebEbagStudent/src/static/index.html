@@ -1,0 +1,76 @@
+</!DOCTYPE html>
+<html ng-app="myApp" ng-controller="BaseCtrl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Angular之电子书包</title>
+    <!-- <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!--<link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
+    <link href="./css/base.css" rel="stylesheet" type="text/css" />
+    <!--<link href="./css/homework.css" rel="stylesheet" type="text/css" />-->
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js" type="text/javascript"></script>-->
+    <script src="./js/common/angular/angular.js" type="text/javascript"></script>
+    <script src="./js/common/angular/angular-route.min.js" type="text/javascript"></script>
+    <script src="./js/app.js" type="text/javascript"></script>
+    <script src="./js/controller/base.js" type="text/javascript"></script>
+    <script src="./js/controller/home.js" type="text/javascript"></script>
+    <script src="./js/controller/homework.js" type="text/javascript"></script>
+    <script src="./js/controller/learn.js" type="text/javascript"></script>
+    <script src="./js/controller/class.js" type="text/javascript"></script>
+    <script src="./js/controller/ask.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-container rel">
+            <a class="abs dib header-logo ">
+                <img src="./images/logo_1.png" alt="读书郎电子书包">
+                <img src="./images/logo_2.png" alt="读书郎电子书包">
+            </a>
+            <ul class="header-nav">
+                <li ng-class="{'checked':navTypeSelected==0}">
+                    <a href="#home" class="header-home" ng-click="selectNavType(0);"></a>
+                </li>
+                <li ng-class="{'checked':navTypeSelected==1}">
+                    <a href="#homework" class="header-homework" ng-click="selectNavType(1);"></a>
+                </li>
+                <li ng-class="{'checked':navTypeSelected==2}">
+                    <a href="#learn" class="header-learn" ng-click="selectNavType(2);"></a>
+                </li>
+                <li ng-class="{'checked':navTypeSelected==3}">
+                    <a href="#class" class="header-class" ng-click="selectNavType(3);"></a>
+                </li>
+                <li ng-class="{'checked':navTypeSelected==4}">
+                    <a href="#ask" class="header-ask" ng-click="selectNavType(4);"></a>
+                </li>
+                <li ng-class="{'checked':navTypeSelected==5}">
+                    <a href="#zone" class="header-zone" ng-click="selectNavType(5);"></a>
+                </li>
+            </ul>
+            <div class=" abs header-info">
+                您好，张波同学<a href="#"><b>[退出]</b></a>
+            </div>
+        </div>
+    </div>
+    <!-- 模板页头 -->
+    <div class="home-body">
+        <div class="container">
+            <!-- 模板页头END -->
+            <div ng-view></div>
+            <!-- 模板页脚 -->
+        </div>
+        <div class="footer">
+            <div class="cnt container-bottom">
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- 模板页脚END -->
+    <script>
+    </script>
+</body>
+
+</html>

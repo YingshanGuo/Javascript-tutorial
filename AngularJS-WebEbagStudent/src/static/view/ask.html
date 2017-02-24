@@ -1,0 +1,65 @@
+<!-- <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/> -->
+<link href="../static/css/homework.css" rel="stylesheet" type="text/css" />
+<link href="../static/css/learn.css" rel="stylesheet" type="text/css" />
+<link href="../static/css/ask.css" rel="stylesheet" type="text/css" />
+<!-- 可变内容 -->
+<div class="main growup" id="qa_main" style="min-height: 600px;">
+    <div class="content query dib fl">
+
+        <div class="clb" style="clear: both;">
+
+            <!--我的提问etc-->
+            <div class="mainalltitle" id="mainalltitle">
+                <div class="maintable">
+                    <div class="tablebndiv bn1 click">　<span id="myqredspan" class="redpointspan"></span></div>
+                    <div class="tablebndiv bn2">　<span id="allqredspan" class="redpointspan"></span></div>
+                    <div class="tablebndiv bn3">　<span id="myaredspan" class="redpointspan"></span></div>
+                    <div class="tablebndiv bn4">　</div>
+                </div>
+                <a href="#ask/ask">
+                    <div class="mainaskbndiv">我要提问</div>
+                </a>
+            </div>
+            <!--未解决、已解决-->
+            <div class="mainsubtable" id="mainsubtable">
+                <div class="titlebn left click">未解决</div>
+                <div class="titlebn right ">已解决</div>
+                <div class="titlebn right ">问我的</div>
+                <div class="maincountdiv" id="maincountdiv">共&nbsp;1&nbsp;个</div>
+                <div class="mainlistinputdiv"> <input id="mainlistinput" class="mainlistinput" value="" maxlength="20" placeholder="请输入姓名、问题内容等关键字搜索" name="username" type="text">
+                    <div style="visibility:hidden;" class="mainsearchdelbndiv" id="mainsearchdelbndiv"></div>
+                    <div class="mainsearchbndiv" id="mainsearchbndiv"></div>
+                </div>
+                <select class="mainselect" onchange="QAmain.main.on_selectchange(this)" value="0"> 
+							    <option class="mainselectoption" value="0" selected="selected">全部学科</option> 
+							    <option class="mainselectoption" value="1">语文</option> 
+							    <option class="mainselectoption" value="2">数学</option> 
+							    <option class="mainselectoption" value="3">英语</option> 
+							    <option class="mainselectoption" value="4">科学</option> 
+							    <option class="mainselectoption" value="5">政治</option> 
+							    <option class="mainselectoption" value="6">历史</option> 
+							    <option class="mainselectoption" value="7">地理</option> 
+							    <option class="mainselectoption" value="8">物理</option> 
+							    <option class="mainselectoption" value="9">化学</option> 
+							    <option class="mainselectoption" value="10">生物 </option> 
+							    <option class="mainselectoption" value="11">其他</option> 
+							</select>
+                <div style="clear:both;"></div>
+            </div>
+            <!--下方内容-->
+            <div class="mainlistdiv" id="mainlistdiv">
+                <a href="#ask/detail">
+                    <div class=" questionlistsinglediv ">
+                        <div class="qluserdiv my ">
+                            <div class="qlavatardiv hide "><img src="http://www.anoah.com/uploads/users/90/25/224696.jpg?t=0 "></div> <span class="qlnamespan hide ">李颖</span> <span class="qltimespan ">2016-12-07 11:27</span> <span style="clear:both; "></span> </div>
+                        <div class="qlcontentdiv noleftp ">
+                            <div class="qlcontentspan ">1+e约等于几</div>
+                        </div>
+                        <div class="qlcountdiv noleftp "> <span class="qlcountbspan "></span> <span class="qlcountspan ">回答（0）</span> <span class="qlcountaspan "></span> <span class="qlcountspan ">浏览（0）</span> <span class="qldeletespan " _prevent="1 ">删除</span> </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 可变内容 -->

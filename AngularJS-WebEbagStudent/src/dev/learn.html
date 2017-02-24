@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    @@include("include/css.html")
+    <!-- @@include("include/myclass-css.html") -->
+    <link rel="stylesheet" type="text/css" href="../static/css/learn.css">
+</head>
+<body>
+@@include("include/header.html") @@include("include/body-top.html")
+	<!-- 可变内容 -->
+	<div class="main growup">
+		<div class="content query dib fl" style="min-height: 500px;">
+			<div style="font-size:18px;font-weight:bold;margin:20px 0px 10px 106px;">
+				我加入的班级
+			</div>
+			<div class="filter clb f14" style="margin-left:106px;">
+				<div class="classblockdiv" >
+					<div class="cbimagediv">
+						<img style="width:140px;height:90px;" src="../static/images/logo_class_all.png">
+					</div>
+					<div class="growup-class">
+						<div class="growup-class-title">
+							六年级
+						</div>
+						<div class="growup-class-info">
+							班主任:未设置
+						</div>
+						<div class="growup-class-info">
+							班级成员:10
+						</div>
+						<div class="growup-class-info">
+							班级号:17971
+						</div>
+					</div>
+				</div>		
+				<div class="classblockdiv" >
+					<div class="cbimagediv">
+						<img style="width:140px;height:90px;" src="../static/images/logo_class_all.png">
+					</div>
+					<div class="growup-class">
+						<div class="growup-class-title">
+							六年级
+						</div>
+						<div class="growup-class-info">
+							班主任:未设置
+						</div>
+						<div class="growup-class-info">
+							班级成员:10
+						</div>
+						<div class="growup-class-info">
+							班级号:17971
+						</div>
+					</div>
+				</div>		
+			</div>
+			<!--返回顶部-->
+			<div class="sidebar fix dn" id="work_sidebar" style="display: none;">
+				<a href="javascript:void(0)" class="dib fl scroll-top"></a>
+			</div>
+		</div>
+	</div>
+	<!-- 可变内容 -->	
+@@include("include/body-footer.html")
+<!-- 页脚 -->
+@@include("include/script.html")
+<script>
+		$(function(){
+ 			$(".classblockdiv").click(function(){
+ 				  window.location.href='./learn-detail.html'; 
+ 			});
+		});
+</script>
+</body>
+</html>
