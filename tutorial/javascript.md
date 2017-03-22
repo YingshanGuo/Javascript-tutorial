@@ -26,9 +26,11 @@
            </li>
            <li>内部函数   （可以访问父函数作用域中的变量，减少全局变量）</li>
            <li>闭包   （返回外部函数）
-            <ul>
-                <li>内存泄漏（不要在匿名内部函数中使用变量、添加另外一个闭包）</li>      </ul>
-            </li>
+              <ul>
+                <li>内存泄漏（不要在匿名内部函数中使用变量、添加另外一个闭包）</li>      
+              </ul>
+           </li>
+           <li>this</li>
         </ul>
     </li>
     <li>ES6
@@ -58,8 +60,15 @@
            </ul>
        </li>
    </ul>
+   <li><a href="">JavaScript写成类插件</a></li>
+   <li><a href="#javascript-question">JavaScript常错</a>
+      <ul>
+        <li><a href="#javascript-question-1">getElementById获取变量</a></li>
+      </ul>
+   </li>
 </li>
 </ol>
+
 浏览网站:
  - 核心（ECMAScript）
   - 重新介绍 JavaScript（JS 教程）https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript#数字
@@ -380,6 +389,75 @@ function addHandler() {
 }
 ```
 
+### this
+- Java属于编译期绑定，而JS属于 **运行期绑定**
+- **this和它声明环境无关，而完全取决于他的执行环境**
+
+```
+//读以下代码之前，必须先阅读《哈利·波特》原著。（笑）
+
+var name = '罗恩';
+var aaa = {
+    name: '哈利',
+    say: function () {
+        console.log(this.name);
+    }
+}
+
+var bbb = {
+    name: '赫敏',
+    say: aaa.say
+}
+
+var ccc = aaa.say;
+
+aaa.say();    //哈利
+bbb.say();    //赫敏
+ccc();        //罗恩
+```
+bbb把aaa对象的say方法引用过来,引用的是一个方法而非一个对象，而aaa.say存储的是一个匿名函数，所以这种写法和以下代码并没有什么区别。
+
+```
+var bbb = {
+    name: '赫敏',
+    say: function () {
+        console.log(this.name);
+    }
+}
+```
+
+- 特殊情况：```setTimeout``` 和``` setInterval ```
+
+```
+var aaa = {
+    name: '哈利',
+    getName: function () {
+        setTimeout(function(){
+            console.log(this.name);
+        },100)
+    }
+}
+```
+原来三行的输出会是什么？
+
+答案：3个罗恩。
+也就是说，三次this，指代的都是window对象。
+
+稍微改写一下这个方法：
+```
+getName: function () {
+        //在setTimeout外存储this指代的对象
+        var that = this;
+        setTimeout(function(){
+            //this.name变成了that.name
+            console.log(that.name);
+        },100)
+}
+```
+输出就又正常了。
+
+----------
+
 ## ES6
 ### 类
 #### 使用 extends 创建子类
@@ -469,3 +547,60 @@ class Lion extends Cat {
 
 
 ----------
+
+
+## Javascript写成类插件
+
+```
+;
+(function($) {
+    var Drawingboard = function(settings) {
+        var settings = settings || {}
+        var defaultSettings = {
+            lineWidth: 1
+        }
+        this.settings = $.extend(defaultSettings, settings);
+        this.abc = "abc";
+    }
+
+    Drawingboard.prototype = {
+        func1: function() {
+            console.log("this.abc----", this.abc);
+        },
+        func2: function() {
+            var test = this;
+            console.log("this.abc", this.abc); //打印abc
+            var test1 = $("h3").click(function() {
+                console.log(test.abc);  //打印abc;没有赋值var test =this,打印undefined
+                test.abc = "bbb";
+                console.log(test.abc);  //打印bbb
+                test.func1();  //打印bbb
+            });
+        }
+    }
+    window.Drawingboard = Drawingboard;
+    var canvas = new Drawingboard();
+    canvas.func2();
+})(jQuery);
+```
+
+<a id="#javascript-question"></a>
+### JavaScript常错
+<a id="#javascript-question-1"></a>
+#### getElementById 获取变量
+
+但如果事先定义一个变量，例如
+
+```
+var itemId=label1;
+var item=document.getElementById('itemId');//双引号一样
+```
+
+然后就会报错，说item为null。
+如果去掉引号就好了。。
+即：
+```
+var itemId=label1;
+var item=document.getElementById(itemId);//没有引号就好了
+```
+不加引号，这个itemid就是变量，加上引号，这就是字符串常量。电脑就去找ID为ItemId的元素。自然是null

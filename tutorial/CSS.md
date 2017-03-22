@@ -36,6 +36,12 @@
                 <li>image 拉伸</li>
             </ul>
         </li>
+        <li><a href="#question-1.7">image 底下有白边</a>
+          <ul><li>display: block;</li></ul>
+        </li>
+        <li><a href="#question-1.8">input 点击有蓝边</a>
+          <ul><li>outline: none;</li></ul>
+        </li>
     </ul>
     </li>
     <li><a href="#css-tricks">CSS Tricks</a>
@@ -176,6 +182,49 @@ background:url('../../static/images/login/bg0.png') no-repeat  0 0 / 100% 100% r
   background-size:100% 100%;
 
 ```
+
+<a id="question-1.7"></a>
+#### image底下有白边
+首先 img 元素默认对齐方式为 vertical-align: baseline;，这就导致了，baseline 以下的部分被空了出来，显示了背景的白色。
+
+问题找到了，对症下药可得出下面的解决方案：
+
+- 根本上消除 img 的对齐方式 —— 块状化：
+
+```
+img {
+display: block;
+}
+```
+
+- 更改 img 对齐方式，以下三种均可
+
+```
+img {
+vertical-align: top;
+vertical-align: middle;
+vertical-align: bottom;
+}
+```
+
+- 更改行高，行高是两条 baseline 之间的距离，因此可以暴力的让行高消失
+
+```
+{
+line-height: 0;
+/* font-size: 0; 当 line-height 使用数值、百分比或者 rem 定义时也可用这种方式，因为 line-height 参照的是 font-size 的值*/
+}
+```
+
+<a id="question-1.8"></a>
+#### input 点击有蓝边
+
+```
+input,textarea{
+  outline:none;
+}
+```
+
 ----------
 
 <a id="css-tricks"></a>
@@ -315,6 +364,8 @@ cursor:pointer;
  overflow:hidden;
  }
  ```
+
+
 ----------
 
 ### 选择器 Selectors

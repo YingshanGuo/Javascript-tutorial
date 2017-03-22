@@ -56,6 +56,11 @@
 			<li><a href="#Query-tricks-3">判断data-name</a></li>
 		</ul>
 	</li>
+	<li><a href="#jQuery-question">jQuery常错</a>
+		<ul>
+			<li><a href="#jQuery-question-1">获取input的值</a></li>
+		</ul>
+	</li>
 </ol>
 
 
@@ -529,7 +534,7 @@ jQuery.fn.toggleText = function (value1, value2) {
 ```
 
 <a id="jQuery-tricks-3"></a>
-### 判断data-name  
+#### 判断data-name  
 
 - 判断 data-name 是否等于honour  
 
@@ -540,4 +545,77 @@ jQuery.fn.toggleText = function (value1, value2) {
 if ( $(this).data('name') === 'honour' ){
 	$(document).find(".li-score").hide();
 }
+```
+
+<a id="jQuery-tricks-4"></a>
+#### 实时监听input变化
+
+```
+$("#brush-size").bind("input propertychange",function(){  
+	 ctx.lineWidth = $(this).val();
+});
+```
+
+<a id="jQuery-question"></a>
+### jQuery常错  
+
+<a id="jQuery-question-1"></a>
+#### 获取input的值
+- var result1 = $("#input_text1").val();  
+- var result2 = $("input[id='input_text2']").val();  
+- var result3 = $("input[id='input_text3']").attr("value");
+- var result4 = $("input[type='text']").val();
+- var result5 = $("input[name='text']").val();  
+
+```
+<!-- 获取文本框的值：方式一 -->  
+<div id="test1">  
+	<input id="input_text1" type="text" value="test1" style="width: 100px;" />  
+	<button id="button_text1">test1</button>  
+</div>  
+<!-- 获取文本框的值：方式二 -->  
+<div id="test2">  
+	<input id="input_text2" type="text" value="test2" style="width: 100px;" />  
+	<button id="button_text2">test2</button>  
+</div>  
+<!-- 获取文本框的值：方式三 -->  
+<div id="test3">  
+	<input id="input_text3" type="text" value="test3" style="width: 100px;" />  
+	<button id="button_text3">test3</button>  
+</div>
+```
+
+```
+//使用id的方式获取  
+$(document).ready(function(){  
+	//1  
+	$("#button_text1").click(function(){  
+			var result1 = $("#input_text1").val();  
+			alert("result1 = " + result1);  
+	});  
+	//2  
+	$("#button_text2").click(function(){  
+			var result2 = $("input[id='input_text2']").val();  
+			alert("result2 = " + result2);  
+	});  
+	//3  
+	$("#button_text3").click(function(){  
+			var result3 = $("input[id='input_text3']").attr("value");  
+			alert("result3 = " + result3);  
+	});  
+	//4. 可以通过type的值来获取input中的值（未演示）  
+	/*  
+	$("#button_text4").click(function(){  
+			var result4 = $("input[type='text']").val();  
+			alert("result4 = " + result4);  
+	});  
+	*/  
+	//5. 可以通过name的值来获取input中的值（未演示）  
+	/*  
+	$("#button_text5").click(function(){  
+			var result5 = $("input[name='text']").val();  
+			alert("result5 = " + result5);  
+	});           
+	*/  
+});
 ```

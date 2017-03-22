@@ -14,6 +14,11 @@
 			<li><a href="#AngularJS-basic-4">Services</a></li>
     </ul>
   <li><a href="#AngularJS-QA">AngularJS常错</a></li>
+	<li><a href="#AngularJS-tricks">AngularJS Tricks</a>
+		<ul>
+			<li><a href="#AngularJS-tricks-1">选择栏切换样式</a></li>
+		</ul>
+	</li>
 </ol>
 <a id="AngularJS-basic"></a>
 ## AngularJS基础
@@ -370,9 +375,44 @@ Now ```$http``` is available to use inside ```forecast```.
 - As before, any properties attached to ```$scope``` become available to use in the view. This means in ```index.html```, we can display the ```city_name``` using an expression as done before.
 
 
-
+----------
+<a id="AngularJS-QA"></a>
 ### AngularJS 常错
 
 ```
 <img ng-src="{{myVar}}">
 ```
+
+----------
+
+<a id="AngularJS-tircks"></a>
+### AngularJS Tricks
+<a id="AngularJS-tircks-1"></a>
+#### 选择栏切换样式
+- html
+
+```
+<ul>
+	<li class="{{timeNavType==1?'honor-click':''}}" ng-click="chooseTimeNav(1)" class="honor-click"><span>全部</span></li>
+	<li class="{{timeNavType==2?'honor-click':''}}" ng-click="chooseTimeNav(2)"><span>本周</span></li>
+	<li class="{{timeNavType==3?'honor-click':''}}" ng-click="chooseTimeNav(3)"><span>本月</span></li>
+	<li class="{{timeNavType==4?'honor-click':''}}" ng-click="chooseTimeNav(4)"><span>自定义时间</span></li>
+</ul>
+<td  ng-show="timeNavType==4">
+	<div class="myclass-honor-time">
+			<span></span>
+			<input type="text" placeholder="2017-02-16">
+	</div>
+</td>
+```
+- js
+
+```
+$scope.timeNavType = 1;
+$scope.chooseTimeNav = function (typ) {
+		$scope.timeNavType = typ;
+};
+```
+
+
+----------
