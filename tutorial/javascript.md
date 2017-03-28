@@ -66,6 +66,7 @@
         <li><a href="#javascript-question-1">getElementById获取变量</a></li>
       </ul>
    </li>
+   <li><a href="#javascript-QA">JavaScript陷阱集</a></li>
 </li>
 </ol>
 
@@ -79,7 +80,7 @@
 ## 核心（ECMAScript）
 
 ### Javascript
-####预留关键字 Reserved keywords
+#### 预留关键字 Reserved keywords
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords
 
 ----------
@@ -350,6 +351,68 @@ y(7); // 返回 27
 
 所以当调用 makeAdder 时，解释器创建了一个作用域对象，它带有一个属性：a，这个属性被当作参数传入 makeAdder 函数。然后 makeAdder 返回一个新创建的函数。**通常 JavaScript 的垃圾回收器会在这时回收 makeAdder 创建的作用域对象，但是返回的函数却保留一个指向那个作用域对象的引用**。结果是**这个作用域对象不会被垃圾回收器回收，直到指向 makeAdder 返回的那个函数对象的引用计数为零**。
 
+#####　闭包（Closure）补充知识
+Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量。
+
+```
+var n=999;
+　　function f1(){
+　　　　alert(n);
+　　}
+　　f1(); // 999
+```
+
+另一方面，在函数外部自然无法读取函数内的局部变量。
+
+```
+　　function f1(){
+　　　　var n=999;
+　　}
+　　alert(n); // error
+```
+- 闭包的用途
+
+```
+function f1(){
+　　　　var n=999;
+　　　　function f2(){
+　　　　　　alert(n);
+　　　　}
+　　　　return f2;
+　　}
+　　var result=f1();
+　　result(); // 999
+```
+
+- 思考题
+
+```
+  var name = "The Window";
+　　var object = {
+　　　　name : "My Object",
+　　　　getNameFunc : function(){
+　　　　　　return function(){
+　　　　　　　　return this.name;
+　　　　　　};
+　　　　}
+　　};
+　　alert(object.getNameFunc()());     //The Window
+```
+
+```
+  var name = "The Window";
+　　var object = {
+　　　　name : "My Object",
+　　　　getNameFunc : function(){
+　　　　　　var that = this;
+　　　　　　return function(){
+　　　　　　　　return that.name;
+　　　　　　};
+　　　　}
+　　};
+　　alert(object.getNameFunc()());      //My Object
+```
+
 ----------
 
 ##### 内存泄漏（不要在匿名内部函数中使用变量、添加另外一个闭包）
@@ -604,3 +667,120 @@ var itemId=label1;
 var item=document.getElementById(itemId);//没有引号就好了
 ```
 不加引号，这个itemid就是变量，加上引号，这就是字符串常量。电脑就去找ID为ItemId的元素。自然是null
+
+
+<a id="#javascript-QA"></a>
+### javascript 陷阱集
+- 考作用域
+
+```
+(function() {
+var b = 5;
+var a = b;  
+b = 6;
+console.log(a,b);
+//5 6
+})();
+```
+
+```
+var g = 0;
+function f() {
+    // 这里面就形成了一个方法作用域, 能够保护其中的变量不能被外部访问
+    // 方法作用域能够访问全局作用域
+    var a = 1;
+    console.log(g);
+
+    // 嵌套方法作用域
+    function ff() {
+        // 这里面再度形成了一个方法作用域
+        // 其中可以访问外部的那个方法作用域
+        var aa = 2;
+        console.log(a);
+    }
+
+    // 出了 ff 的作用域就不能访问其中的东西了
+    // console.log(aa); // 报错 ReferenceError: aa is not defined
+}
+f();
+// console.log(a); // 报错 ReferenceError: a is not defined
+```
+
+- 考声明提前
+```
+//考声明提前
+function test() {
+	console.log(a);
+	console.log(foo());
+	var a = 1;
+	function foo() {
+		return 2;
+	}
+}
+
+test();
+```
+- 考 this
+```
+var fullname = 'John Doe';
+var obj = {
+	fullname: 'Colin Ihrig',
+	getFullname: function() {
+			return this.fullname;
+
+	}
+};
+console.log(obj.getFullname());   //Colin Ihrig
+var test = obj.getFullname;       //John Doe
+console.log(test());
+```
+
+- 制造干扰因素的版本
+
+```
+var fullname = 'John Doe';
+var obj = {
+	fullname: 'Colin Ihrig',
+	prop: {
+		fullname: 'Aurelio De Rosa',
+		getFullname: function() {
+			return this.fullname;
+		}
+	},
+  getFullname: function() {
+			return this.fullname;
+		}
+};
+console.log(obj.prop.getFullname());   //Aurelio De Rosa
+console.log(obj.getFullname());      //Colin Ihrig
+var test = obj.prop.getFullname;    //John Doe
+console.log(test());
+```
+
+- 分号陷阱
+
+```
+//分号陷阱
+function fn(){
+	return {
+		x:1
+	};
+}                    //{x:1}    
+
+function fn(){
+	return
+	{
+		x:1
+	};
+}
+console.log(fn())      //undefined
+```
+
+- 小数相加
+
+```
+//不要相信js的符点运算结果，但是整数是可依赖的
+0.1 + 0.2  不等于  0.3    //0.30000000000000004
+可用如下
+(0.1*10 + 0.2*10)/10
+```
