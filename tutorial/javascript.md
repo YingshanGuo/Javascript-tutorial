@@ -707,6 +707,7 @@ f();
 ```
 
 - 考声明提前
+
 ```
 //考声明提前
 function test() {
@@ -720,7 +721,9 @@ function test() {
 
 test();
 ```
+
 - 考 this
+
 ```
 var fullname = 'John Doe';
 var obj = {
